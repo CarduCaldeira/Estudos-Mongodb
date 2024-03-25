@@ -447,3 +447,21 @@ client.close()
 No link https://learn.mongodb.com/courses/mongodb-crud-operations-in-python é apresentado tais comandos no pthon em detalhes.
 
 ## Criando Schemas
+
+Ao criar coleções podemos validar as entradas como em bancos de dados SQL.
+
+-inserir aqui schemas
+
+https://www.mongodb.com/pt-br/docs/manual/core/schema-validation/specify-json-schema/
+
+https://stackoverflow.com/questions/46569262/does-pymongo-have-validation-rules-built-in
+
+## Agregação no pymongo
+
+https://www.mongodb.com/developer/languages/python/python-quickstart-aggregation/
+
+## Exemplo do mongo com FastApi e Flask
+
+https://www.mongodb.com/developer/languages/python/python-quickstart-fastapi/
+
+https://github.com/dexteridea22/python-flask-mongoengine-docker-starter/blob/master/docker-compose.yml
