@@ -1,24 +1,42 @@
 from pymongo import MongoClient
 
-user = 'root'
-password = 'MjQwOTgtcnNhbm5h' # CHANGE THIS TO THE PASSWORD YOU NOTED IN THE EARLIER EXCERCISE - 2
-host='localhost'
 #create the connection url
-connecturl = "mongodb://{}:{}@{}:27017/?authSource=admin".format(user,password,host)
+connecturl = "mongodb://127.0.0.1:27017/"
 
 # connect to mongodb server
 print("Connecting to mongodb server")
 connection = MongoClient(connecturl)
 
-# get database list
-print("Getting list of databases")
-dbs = connection.list_database_names()
+# select the 'training' database
 
-# print the database names
+db = connection.training
 
-for db in dbs:
-    print(db)
-print("Closing the connection to the mongodb server")
+# select the 'mongodb_glossary' collection
+
+collection = db.languages
+
+# create documents
+
+doc1 = {"database1":"a database contains collections"}
+doc2 = {"collection":"a collection stores the documents"}
+doc3 = {"document":"a document contains the data in the form or key value pairs."}
+
+# insert documents
+print("Inserting documents into collection.")
+
+collection.insert_one(doc1)
+collection.insert_one(doc2)
+collection.insert_one(doc3)
+
+# query for all documents in 'training' database and 'python' collection
+
+docs = collection.find()
+
+print("Printing the documents in the collection.")
+
+for document in docs:
+    print(document)
 
 # close the server connecton
+print("Closing the connection.")
 connection.close()
